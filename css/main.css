@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: mythology_of_egypt, metamorphous, poppins;*/
+}
+
+/* set colours for text type eg.heading for all pgs */
+
+/*colours: darkBlue #002d68 , yellow #e9ad1c , 
+lightBlue #15d5f5 , black #000000 , white #ffffff ,
+*/
+
+.navbar{
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    margin: 20px;
+}
+
+
+.logoName{
+font-weight: 700;
+font-size: large;
+border-radius: 20px;
+padding: 5px 10px;
+color:#e9ad1c;
+}
+
+.navLinks{
+    display: flex;
+    gap: 20px;
+}
+
+.navLinks a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+
+/*TBC adjust #mainhero still*/
+#mainHero{
+        background-image: url(../assets/img/homeHeader.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: end;
+        
+        height: 80vh;
+        text-align: left;
+}
+
+#mainHero h1{
+    color: #e9ad1c;
+}
+#mainHero p{
+    color: white;
+}
+/* TBC change alignment/justify to fix text on right issue 
+also change image to fill screen under navbar*/ 
+
+.section2{
+    background-color: #002d68;
+}

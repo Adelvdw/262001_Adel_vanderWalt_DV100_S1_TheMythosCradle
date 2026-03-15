@@ -1,8 +1,18 @@
 body{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     /*font-family: mythology_of_egypt, metamorphous, poppins;*/
 }
+
+p,h2,h3, h4, h5, h6 { 
+font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+    font-family: "TitleFont";
+    src: url("../assets/fonts/Mythology\ Of\ Egypt.otf");
+}
+
 
 /* set colours for text type eg.heading for all pgs */
 
@@ -48,14 +58,36 @@ color:#e9ad1c;
         background-position: center;
         background-repeat: no-repeat;
 
-        display: flex;
+        display: flex; 
         flex-direction: column;
         justify-content: flex-end;
         align-items: end;
         
-        height: 80vh;
-        text-align: left;
+        height: 100vh;
+        text-align: center;
 }
+
+.pageTitle{
+    font-family: "TitleFont", sans-serif;
+    font-size: 96pt;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+}
+
+.rightHero{
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+    justify-content: flex-end;
+    /* align-items: end; */
+}
+.rightHero p{
+    margin: 0;
+    font-family: 'metamorphous', sans-serif;
+    font-size: 24pt;
+}
+
+
 
 #mainHero h1{
     color: #e9ad1c;

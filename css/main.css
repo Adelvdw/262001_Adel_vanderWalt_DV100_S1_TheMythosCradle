@@ -1,11 +1,31 @@
+/* General */
+
+/*colours: darkBlue #002d68 , yellow #e9ad1c , 
+lightBlue #15d5f5 , black #000000 , white #ffffff ,
+*/
+
 body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
     /*font-family: mythology_of_egypt, metamorphous, poppins;*/
 }
 
-p,h2,h3, h4, h5, h6 { 
+h1,h2,h3, h4, h5, h6 { 
 font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 18pt;
+    font-weight: 600pt;
+}
+
+p{
+    font-size: 16pt;
 }
 
 @font-face {
@@ -13,31 +33,22 @@ font-family: 'Poppins', sans-serif;
     src: url("../assets/fonts/Mythology\ Of\ Egypt.otf");
 }
 
-
-/* set colours for text type eg.heading for all pgs */
-
-/*colours: darkBlue #002d68 , yellow #e9ad1c , 
-lightBlue #15d5f5 , black #000000 , white #ffffff ,
-*/
-
+/* Fix navbar NB NB */
 .navbar{
     display: flex;
     flex-wrap: row nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.605);
     border-radius: 30px;
     margin: 20px;
 }
 
 
-.logoName{
-font-weight: 700;
-font-size: large;
-border-radius: 20px;
-padding: 5px 10px;
-color:#e9ad1c;
+.logoName img{
+    width: 400px;
+    height: auto;
 }
 
 .navLinks{
@@ -47,11 +58,19 @@ color:#e9ad1c;
 
 .navLinks a{
     text-decoration: none;
-    color: black;
+    color: rgb(54, 54, 54);
     display: flex;
+    font-size: 16pt;
+    font-family: 'Poppins';
+    font-weight: 500;
 }
 
-/*TBC adjust #mainhero still*/
+.navLinks a:hover{
+    color: #15d5f5;
+}
+
+/* Section 1 hero */
+/*TBC adjust #mainhero textposition still*/
 #mainHero{
         background-image: url(../assets/img/homeHeader.png);
         background-size: cover;
@@ -96,29 +115,79 @@ color:#e9ad1c;
 #mainHero p{
     color: white;
 }
-/* TBC change alignment/justify to fix text on right issue 
-also change image to fill screen under navbar*/ 
 
+/* Section 2 begin your journey */
 .begin2{
     background-color: #002d68;
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 80px;
 }
+
+.begin2Container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 60px 80px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 80px; */
+}
+
+#carouselExample, .beginRight{
+    width: 40%;
+    padding: 20px; 
+}
+
 
 .beginRight{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.beginRight h3{
+    color: #e9ad1c;
+    padding-bottom: 10px;
+}
+
+.beginRight h2, .beginRight p{
+    color: white;
+    padding-bottom: 15px;
 }
 
 #carouselExample{
     margin-right: 50px;
 }
 
-.theCradle3{
+.toAdoptPageButton{
+    border-radius: 10px;
+    background-color: #15d5f5;
+    border-color:#15d5f5;
+    padding: 20px;
+}
+
+.toAdoptPageButton a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 50;
+
+}
+
+/* Section 3 the cradle */
+/* fix sections by adding div container */
+
+/* not used anymore
+ .theCradle3{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px; 
+} */
+
+.cradle3Container{
     display: flex;
     justify-content: space-between;
     padding: 60px 80px;
+    align-items: center;
 }
 
 .rounderImage{
@@ -127,4 +196,57 @@ also change image to fill screen under navbar*/
 
 .cradleTextLeft{
     width: 800px;
+}
+
+.cradleTextLeft h3{
+    color: #15d5f5;
+    padding-bottom: 10px;
+}
+
+.cradleTextLeft h2{
+    color: #2F004E;
+    padding-bottom: 10px;
+}
+
+.cradleTextLeft p{
+    color: #676767;
+    padding-bottom: 10px;
+}
+
+/* section 4 past adoptions */
+
+.pastAdopt{
+    background-color: #002d68;
+}
+
+.pastAdoptContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px;
+    align-items: center;
+    text-align: center;
+}
+
+.pastAdoptContainer h2{
+    color: white;
+}
+
+.pastAdoptContainer h3{
+    color: #e9ad1c;
+}
+
+.pastAdopteeSlots{
+    display: flex;
+    flex-direction: row;
+}
+
+.pastAdoptee{
+    margin: 25px;
+    color: white;
+    width: 267px;
+}
+
+.pastAdoptee h3{
+    margin-top: 10px;
 }

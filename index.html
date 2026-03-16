@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <header>
+     <!--<header> I put it in mainHero id to remove white background and sectioning issue
         <div class="navbar"> 
             <div class="logoName">
                 <p>The Mythos Cradle</p>
@@ -35,31 +35,92 @@
             </div>
         </div>
 
-    </header>
+    </header>-->
 
     <section id="mainHero">
+        <div class="navbar"> 
+            <div class="logoName">
+                <p>The Mythos Cradle</p>
+            </div>
+
+            <div class="navLinks">
+                <a href="#">Home</a>
+                <a href="pages/adopt.html">Adopt</a>
+                <a href="pages/contact.html">Contact</a>
+
+            </div>
+
+            <div class="searchbar">
+                <p>Add search bar/button</p>
+            </div>
+        </div>
         <div class ="rightHero" >
             <h1 class="pageTitle">The Mythos<br />Cradle</h1>
             <p>Where legends become loved ones</p>
         </div>
     </section>
 
-    <section class="section2">
-<!-- Add div for right and left sectioning -->
-        <h2>BEGIN YOUR JOURNEY</h2>
-        <h1>Tiny Legends Big Hearts</h1>
-        <p>Begin your journey into legend: tiny dragons, 
-        shimmering pegasi, mischievous kitsune, and 
-        watchful basilisks are ready to meet their families. 
-        Delight in enchanted encounters, gentle care, and 
-        joyful playtime. Heartwarming bonds await as these 
-        legendary creatures find their forever homes.</p>
+    <section class="begin2  container">
 
-        <div class="imageSlider">
+<!-- Not Working TBC -->
+            <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="assets/img/imageSlider1.png" class="d-block w-100" alt="...">
+                </div>
+                <!-- <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                </div> -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"><</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">></span>
+            </button>
+        </div> 
+        </div>
+        
+
+        <div class="beginRight"></div>
+            <h2>BEGIN YOUR JOURNEY</h2>
+            <h1>Tiny Legends Big Hearts</h1>
+            <p>Begin your journey into legend: tiny dragons, 
+            shimmering pegasi, mischievous kitsune, and 
+            watchful basilisks are ready to meet their families. 
+            Delight in enchanted encounters, gentle care, and 
+            joyful playtime. Heartwarming bonds await as these 
+            legendary creatures find their forever homes.</p>
+        </div>
 <!--TBC-->
+    </section>
+
+    <section class="theCradle3">
+        <div class="cradleTextLeft">
+            <h2>The Cradle</h2>
+            <h1>A Sanctuary Where Mythical 
+            Creatures Find Families</h1>
+            <p>Discover our carefully nurtured mythical creatures, 
+            each ready to join a loving family. Experience the 
+            joy and wonder of forming a lasting bond, as every 
+            adoption is guided with care, ensuring a safe, 
+            ethical, and heartwarming journey for both 
+            creature and caretaker.
+        </div>
+
+        <div class="cradleImageRight">
+            <img src="assets/img/homeImg1.png" class="rounderImage">
         </div>
     </section>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>

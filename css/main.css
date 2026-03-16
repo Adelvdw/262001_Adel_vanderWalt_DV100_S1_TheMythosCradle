@@ -57,14 +57,15 @@ color:#e9ad1c;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        margin: opx;
 
-        display: flex; 
-        flex-direction: column;
+        display: flex;  
+        flex-direction: column;/* 
         justify-content: flex-end;
-        align-items: end;
+        align-items: end;*/
         
         height: 100vh;
-        text-align: center;
+        text-align: left;
 }
 
 .pageTitle{
@@ -78,8 +79,8 @@ color:#e9ad1c;
     display: flex;
     flex-direction: column;
     margin: 60px;
+    align-items: flex-end;
     justify-content: flex-end;
-    /* align-items: end; */
 }
 .rightHero p{
     margin: 0;
@@ -98,6 +99,32 @@ color:#e9ad1c;
 /* TBC change alignment/justify to fix text on right issue 
 also change image to fill screen under navbar*/ 
 
-.section2{
+.begin2{
     background-color: #002d68;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px;
+}
+
+.beginRight{
+    display: flex;
+    flex-direction: column;
+}
+
+#carouselExample{
+    margin-right: 50px;
+}
+
+.theCradle3{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px;
+}
+
+.rounderImage{
+    border-radius: 20px;
+}
+
+.cradleTextLeft{
+    width: 800px;
 }

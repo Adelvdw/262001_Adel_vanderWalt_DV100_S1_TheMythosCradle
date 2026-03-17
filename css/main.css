@@ -97,7 +97,9 @@ p{
     margin: 60px;
     align-items: flex-end;
     justify-content: flex-end;
+    margin-top: 150px;
 }
+
 .rightHero p{
     margin: 0;
     font-family: 'metamorphous', sans-serif;
@@ -107,7 +109,6 @@ p{
 
 
 #mainHero h1{
-    margin-top: 250px;
     color: #e9ad1c;
 }
 #mainHero p{
@@ -131,7 +132,7 @@ p{
 
 #carouselExample, .beginRight{
     width: 40%;
-    padding: 20px; 
+    padding: 10px; 
 }
 
 
@@ -151,9 +152,6 @@ p{
     padding-bottom: 15px;
 }
 
-#carouselExample{
-    margin-right: 50px;
-}
 
 .toAdoptPageButton{
     border-radius: 10px;
@@ -184,6 +182,7 @@ p{
 .cradle3Container{
     display: flex;
     justify-content: space-between;
+    margin: 60px;
     padding: 50px 80px;
     align-items: center;
 }
@@ -193,7 +192,7 @@ p{
 }
 
 .cradleTextLeft{
-    width: 800px;
+    width: 40%;
     margin-right: 15px;
 }
 
@@ -248,4 +247,27 @@ p{
 
 .pastAdoptee h3{
     margin-top: 10px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 40px;
+    color: #676767;
+    /* margin-left: 5%;
+    margin-left: 5%; 
+    sort out still*/
+}
+
+.footerBottomRight{
+    display: flex;
+    gap: 15px;
+}
+
+.footerBottomRight a{
+    text-decoration: none;
+    color:  #555555;
 }

@@ -182,12 +182,14 @@ p{
     padding: 20px;
 }
 
-.toAdoptPageButton a{
+.toAdoptPageButton {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: larger;
-    padding: 50;
+    padding: 30;
 
 }
 
@@ -271,6 +273,8 @@ p{
     margin-top: 10px;
     color: white;
 }
+
+/* footer items */
 
 footer{
     display: flex;

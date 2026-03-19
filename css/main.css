@@ -193,18 +193,10 @@ p{
     font-weight: bold;
     font-size: larger;
     padding: 30;
+    width: 300px;
 
 }
 
-/* Section 3 the cradle */
-/* fix sections by adding div container */
-
-/* not used anymore
- .theCradle3{
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 80px; 
-} */
 
 .cradle3Container{
     display: flex;

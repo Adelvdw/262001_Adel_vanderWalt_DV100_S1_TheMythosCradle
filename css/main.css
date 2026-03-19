@@ -278,23 +278,121 @@ p{
 
 footer{
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+footer h4{
+    font-weight: bold;
+}
+
+.footerTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.footerTopLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    text-align: left;
+    width: 400px;
+    color: #555555;
+    gap: 10px;
+}
+
+.footerTopLogo img{
+    width: 400px;
+    height: auto;
+}
+
+.footerTopCompany{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 20px;
+    
+}
+.footerTopCompany a{
+    text-decoration: none;
+    color: #555555;
+    font-size: 16pt;
+}
+
+.footerTopSocials{
+    display: flex;
+    flex-direction: column;
+    /* width: 400px;
+    height: auto; */
+    align-items: center;
+    gap: 20px;
+}
+
+.socialLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.socialLinks img{
+    margin: 0px;
+    width: 40%; 
+    height: auto;
+}
+/* .socialLinks a{
+    
+} */
+
+
+.footerLine hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+.footerLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.footerBottom{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding: 20px 40px;
-    color: #676767;
-    /* margin-left: 5%;
-    margin-left: 5%; 
-    sort out still*/
+}
+
+.footerBottomLeft{
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    margin: 0;
+    margin-top: 16px;
+} 
+
+.footerBottomLeft p{
+    font-size: 12pt;
+        color: #676767;
 }
 
 .footerBottomRight{
     display: flex;
+    align-items: center; 
     gap: 15px;
 }
 
-.footerBottomRight a{
+.footerBottomRight a, .footerBottomRight p{
     text-decoration: none;
-    color:  #555555;
+    color: #555555;
+    font-size: 12pt;
+    font-weight: 500;
 }

@@ -85,14 +85,15 @@ p{
     justify-content: center;
     align-items: center;
     background-color: white;
-    height: 55%;
+    /* height: 52px; */
+    height: 55%; 
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 /* Section 1 hero */
-/*TBC adjust #mainhero textposition still*/
+/*TBC adjust #mainhero textposition?*/
 #mainHero{
         background-image: url(../assets/img/homeHeader.png);
         background-size: cover;
@@ -404,4 +405,29 @@ footer h4{
 
 /* adopt page: */
 
+#mainAdopt{
+    background-image: url(../assets/img/adoptHeader.png);
+    background-size: cover;
+    height: 400px;
+ 
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: opx;
 
+    display: flex;  
+    flex-direction: column;
+}
+
+#mainHero{
+        background-image: url(../assets/img/homeHeader.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: opx;
+
+        display: flex;  
+        flex-direction: column;      
+        height: 100vh;
+        text-align: left;
+}

@@ -119,7 +119,9 @@ p{
     margin: 60px;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-top: 150px;
+    /* margin-top: 150px; */
+    margin-top: 20%;
+    margin-bottom: 20%;
 }
 
 .rightHero p{
@@ -331,7 +333,7 @@ footer h4{
     flex-direction: column;
     /* width: 400px;
     height: auto; */
-    align-items: center;
+    align-items: self-start;
     gap: 20px;
 }
 
@@ -339,16 +341,18 @@ footer h4{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    gap: 10px;
 }
 
 .socialLinks img{
     margin: 0px;
-    width: 40%; 
-    height: auto;
+    height: 100px;
+    width: auto;
+    /* width: 40%; 
+    height: auto; */
 }
 /* .socialLinks a{
-    
-} */
+}  */
 
 
 .footerLine hr{
@@ -396,3 +400,8 @@ footer h4{
     font-size: 12pt;
     font-weight: 500;
 }
+
+
+/* adopt page: */
+
+

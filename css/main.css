@@ -85,8 +85,7 @@ p{
     justify-content: center;
     align-items: center;
     background-color: white;
-    /* height: 52px; */
-    height: 55%; 
+    height: 52px; 
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -197,6 +196,7 @@ p{
 
 }
 
+/* Section 3 the cradle */
 
 .cradle3Container{
     display: flex;
@@ -404,25 +404,83 @@ footer h4{
     background-image: url(../assets/img/adoptHeader.png);
     background-size: cover;
     height: 400px;
- 
-    /* background-size: cover; */
+
     background-position: center;
     background-repeat: no-repeat;
     margin: opx;
 
     display: flex;  
     flex-direction: column;
+    text-align: center;
 }
 
-#mainHero{
-        background-image: url(../assets/img/homeHeader.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin: opx;
+.altPageTitle{
+    font-family: 'TitleFont';
+    font-weight: 500;
+    color: white;
+    font-size: 96pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2%
+}
 
-        display: flex;  
-        flex-direction: column;      
-        height: 100vh;
-        text-align: left;
+.navAndTitle{
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    height: 400px;
+}
+
+
+
+
+
+/* Contact page: */
+
+#mainContact{
+    background-image: url(../assets/img/contactHeader.png);
+    background-size: cover;
+    height: 400px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: opx;
+
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+}
+
+.aboutContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+    /* padding: 50px 80px; */
+    align-items: center;
+}
+
+.rounderImage{
+    border-radius: 20px;
+}
+
+.aboutTextLeft{
+    width: 40%;
+    margin-right: 15px;
+    text-align: left;
+}
+
+.aboutTextLeft h3{
+    color: #15d5f5;
+    padding-bottom: 10px;
+}
+
+.aboutTextLeft h2{
+    color: #2F004E;
+    padding-bottom: 10px;
+}
+
+.aboutTextLeft p{
+    color: #676767;
+    padding-bottom: 10px;
 }

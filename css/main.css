@@ -431,13 +431,89 @@ footer h4{
     margin: 2%
 }
 
+
 .navAndTitle{
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     height: 400px;
 }
 
+.adoptIntro{
+    background-color: #002d68;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
 
+.adoptIntro h2{
+    font-family: 'metamorphous';
+    color: #e9ad1c;
+    margin: 0px;
+}
+
+.adoptIntro p{
+    margin-bottom: 0px;
+    color: white;
+    text-align: center;
+}
+
+.filterBarSection{
+    background-color: #e9ad1c;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+}
+
+.filterBarSection h3{
+    font-weight: 500;
+}
+
+
+.filter, .filterBarResultText, .filterBarSort{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.filterBarSort p{
+    
+    margin: 20px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.681);
+    color: #2F004E;
+    font-family: 'Poppins';
+    font-size: 16pt;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.filterBarSortNumber{
+    padding: 20px 30px;
+}
+
+.filterBarSortState{
+    padding:20px 100px;
+    padding-left: 20px;
+}
+
+.verticalLine {
+  border-left: 3px solid #909090; 
+  height: 40px;
+  padding: 5px;
+}
 
 
 
@@ -514,39 +590,73 @@ footer h4{
     font-weight: 500;
 }
 
+.contactInfo h3, .contactInfo h2{
+    margin: 5px;
+}
+
+ .contactInfo h2{
+ color: #002d68;
+} 
+
+.socialLinks {
+    margin-top: 20px;
+    margin-bottom: 12%;
+}
+
+/* .socialLinks img{
+    width: 60%;
+    height: auto;
+} */
+
+.contactInfo iframe{
+    border-radius: 20px;
+}
+
 .contactForm form{
     padding: 20px;
     gap: 10px;
-    background-color: #f4f4f4;
-    border-radius: 20px;
+    background-image: url(../assets/img/formBackground.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin: opx;
+    border-radius: 30px;
+    height: 850px;
+}
+
+.contactForm h1, label{
+    color: white;
 }
 
 .formElement{
     width: 100%;
-    padding: 10px;
+    padding-bottom: 30px;
 }
 
 .contactForm input, 
 .contactForm select,
 .contactForm textarea{
     width: 95%;
-    padding: 10px 0;
+    padding: 25px 0;
     padding-left: 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-family: 'Poppins';
+    margin-top: 20px;
 }
 
 .contactForm button{
-    padding: 12px;
+    padding:25px 80px;
+    margin: 20px;
     margin-left: 10px;
-    background-color: darkblue;
+    background-color: #15d5f5;
     color: white;
     font-family: 'Poppins';
-    font-weight: 400;
+    font-size: 16pt;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 .contactForm button:hover{

@@ -183,23 +183,20 @@ p{
 
 
 .toAdoptPageButton{
-    border-radius: 10px;
-    background-color: #15d5f5;
-    border-color:#15d5f5;
-    padding: 20px;
-}
-
-.toAdoptPageButton {
     display: flex;
     justify-content: center;
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: larger;
-    padding: 30;
+    padding: 30px;
     width: 300px;
-
+    border-radius: 10px;
+    background-color: #15d5f5;
+    border-color:#15d5f5;
 }
+
+
 
 /* Section 3 the cradle */
 
@@ -359,7 +356,6 @@ footer h4{
 .footerLine hr{
     margin-top: 15px;
     margin-bottom: 15px;
-
 }
 .footerLine{
     display: flex;
@@ -518,8 +514,12 @@ footer h4{
 
 /* Adoptee section on Adopt page */
 
-.AdopteeSection{
+.adopteeSection, .altAdopteeSection{
     height: 80vh;
+}
+
+.altAdopteeSection{
+    background-color: #002d68;
 }
 
 .AdopteeSectionContainer{
@@ -527,16 +527,28 @@ footer h4{
     flex-direction: row;
     justify-content: space-evenly;
     align-content: center;
-    margin: 70px 8%;
+    padding: 90px 8%;
     gap: 5%;
 }
 
 .AdopteeSectionContainer h2{
-    margin-bottom: 0px;
+    margin: 0px;
 }
+
+.altAdopteeInfo{
+    color: white;
+}
+
+ .adopteeImage{
+    display: flex;
+    align-content: center;
+    width: 580px;
+    margin-right: 2%;
+} 
 
 .adopteeImage img{
     border-radius: 12px;
+    width: 580px;
 }
 
 .adopteeHorizontalTextGap, .adopteeRating{
@@ -547,6 +559,15 @@ footer h4{
     color: #909090;
 }
 
+.adopteeHorizontalTextGap h3{
+    font-weight: 500;
+}
+
+.altAdopteePrice{
+    color: #15d5f5;
+}
+
+
 .adopteeRating h4{
     font-weight: 500;
     font-size: 14pt;
@@ -556,8 +577,97 @@ footer h4{
     color: #f4c726;
 }
 
+.adopteeDescriptionText{
+    font-weight: 500;
+}
+
 .lineThroughText{
 text-decoration: line-through 2px;
+}
+
+.adopteeButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.toCradleCart, .adoptNumberCounter, .altAdoptNumberCounter{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+}
+
+.toCradleCart{
+    background-color: #15d5f5;
+    border-color:#15d5f5;
+    margin: 0px;
+}
+
+.toCradleCart:hover{
+    color: white;
+    background-color: #A28632;
+}
+
+.adoptNumberCounter, .altAdoptNumberCounter{
+    width: 150px;
+    gap: 50px;
+    background-color: #002d68;
+    border-color:#002d68;
+    padding: 20px 10px;
+}
+
+.altAdoptNumberCounter{
+    width: 150px;
+    gap: 50px;
+    background-color: #e9ad1c;
+    border-color: #e9ad1c;
+    padding: 20px 10px;
+}
+
+.adoptNumberCounter p, .altAdoptNumberCounter p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.adopteeLine hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.adopteeLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.adopteeStarterInfo{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+    font-size: 16pt;
+}
+
+.adopteeStarterInfo h4{
+    line-height: 2.5;
+    font-weight: 500;
+    color:#909090;
+    margin-bottom: 0px;
+}
+
+.adopteeStarterTextLeft{
+    margin-right: 40px;
+}
+
+.adopteeStarterTextRight{
+    margin-left: 20px;
 }
 
 

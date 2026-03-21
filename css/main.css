@@ -7,7 +7,6 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    /*font-family: mythology_of_egypt, metamorphous, poppins;*/
 }
 
 h1,h2,h3, h4, h5, h6 { 
@@ -33,7 +32,6 @@ p{
     src: url("../assets/fonts/Mythology\ Of\ Egypt.otf");
 }
 
-/* Fix navbar NB NB */
 .navbar{
     display: flex;
     flex-wrap: row nowrap;
@@ -81,7 +79,7 @@ p{
 
 .bar{
     border-right: solid #676767 2px;
-    margin-right: 5px
+    margin-right: 5px;
 }
 
 .search{
@@ -91,13 +89,13 @@ p{
     align-items: center;
     background-color: white;
     height: 52px; 
+    width: auto;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 /* Section 1 hero */
-/*TBC adjust #mainhero textposition?*/
 #mainHero{
         background-image: url(../assets/img/homeHeader.png);
         background-size: cover;
@@ -349,8 +347,7 @@ footer h4{
     /* width: 40%; 
     height: auto; */
 }
-/* .socialLinks a{
-}  */
+
 
 
 .footerLine hr{
@@ -456,6 +453,24 @@ footer h4{
     margin-bottom: 0px;
     color: white;
     text-align: center;
+}
+
+.fixedViewCradleButton{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #A28632;
+    border: #A28632;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
 }
 
 .filterBarSection{
@@ -759,10 +774,6 @@ text-decoration: line-through 2px;
     margin-bottom: 12%;
 }
 
-/* .socialLinks img{
-    width: 60%;
-    height: auto;
-} */
 
 .contactInfo iframe{
     border-radius: 20px;

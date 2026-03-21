@@ -516,6 +516,52 @@ footer h4{
 }
 
 
+/* Adoptee section on Adopt page */
+
+.AdopteeSection{
+    height: 80vh;
+}
+
+.AdopteeSectionContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 70px 8%;
+    gap: 5%;
+}
+
+.AdopteeSectionContainer h2{
+    margin-bottom: 0px;
+}
+
+.adopteeImage img{
+    border-radius: 12px;
+}
+
+.adopteeHorizontalTextGap, .adopteeRating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    color: #909090;
+}
+
+.adopteeRating h4{
+    font-weight: 500;
+    font-size: 14pt;
+}
+
+.starIcons{
+    color: #f4c726;
+}
+
+.lineThroughText{
+text-decoration: line-through 2px;
+}
+
+
+
 
 /* Contact page: */
 

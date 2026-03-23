@@ -68,9 +68,11 @@ p{
     color: #15d5f5 !important;
 }
 
-/* .navLinks a:hover{
-    color: #15d5f5;
-} */
+.navLinks a:hover{
+    color: white;
+-webkit-text-stroke-width: 0.7px;
+-webkit-text-stroke-color: #002d68;
+} 
 
 .searchItem{
     background-color: white;
@@ -194,7 +196,9 @@ p{
     border-color:#15d5f5;
 }
 
-
+.toAdoptPageButton:hover{
+    background-color: #e9ad1c;
+}
 
 /* Section 3 the cradle */
 
@@ -324,6 +328,10 @@ footer h4{
     font-size: 16pt;
 }
 
+.footerTopCompany a:hover{
+    color: #15d5f5;
+}
+
 .footerTopSocials{
     display: flex;
     flex-direction: column;
@@ -395,7 +403,9 @@ footer h4{
     font-weight: 500;
 }
 
-
+.footerBottomRight a:hover{
+    color: #15d5f5;
+}
 /* adopt page: */
 
 #mainAdopt{
@@ -471,6 +481,10 @@ footer h4{
     padding: 25px;
     border-radius: 10px;
     width: 300px;
+}
+
+.fixedViewCradleButton:hover{
+    background-color: #e9ad1c;
 }
 
 .filterBarSection{
@@ -621,6 +635,33 @@ text-decoration: line-through 2px;
     height: 30px;
 }
 
+.adoptNumberCounter button, .adoptNumberCounter input, .altAdoptNumberCounter button, .altAdoptNumberCounter input{
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    font-family: 'Poppins';
+}
+
+.adoptNumberCounter button:hover, .altAdoptNumberCounter button:hover{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+    color: #909090; 
+}
+
+
+.adoptNumberCounter input, .altAdoptNumberCounter input{
+    width: 20px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
 .toCradleCart{
     background-color: #15d5f5;
     border-color:#15d5f5;
@@ -634,18 +675,15 @@ text-decoration: line-through 2px;
 
 .adoptNumberCounter, .altAdoptNumberCounter{
     width: 150px;
-    gap: 50px;
+    gap: 30px;
     background-color: #002d68;
     border-color:#002d68;
     padding: 20px 10px;
 }
 
 .altAdoptNumberCounter{
-    width: 150px;
-    gap: 50px;
     background-color: #e9ad1c;
     border-color: #e9ad1c;
-    padding: 20px 10px;
 }
 
 .adoptNumberCounter p, .altAdoptNumberCounter p{

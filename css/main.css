@@ -120,7 +120,7 @@ p{
 .rightHero{
     display: flex;
     flex-direction: column;
-    margin: 60px;
+    margin: 200px;
     align-items: flex-end;
     justify-content: flex-end;
     /* margin-top: 150px; */
@@ -130,9 +130,8 @@ p{
 }
 
 .rightHero p{
-    margin: 0;
     font-family: 'metamorphous', sans-serif;
-    font-size: 24pt;
+    font-size: 25.25pt;
 }
 
 

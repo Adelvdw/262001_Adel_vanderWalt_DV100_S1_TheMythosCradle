@@ -1,28 +1,28 @@
-// // #Attempt 1, IDK if correct...?
+let myForm = document.forms['contactForm'];
 
-//  let form = document.forms['contactForm'];
-//  form.addEventListener("submit", getValues);
+myForm.addEventListener("submit", getName);
 
-
-
-
-
-/* getValues = (event) => {
+function getName(event)
+{
     event.preventDefault();
 
-    let formData = {
-        "name":form.name.value,
-    }
+    let nameData = {
+        "name": this['name'].value
+    };
 
-    let out = `
-        <p>Name: <span>${formData.name}</span></p>
-        `
+    let output = 
+    `
+        <p> Hi ${nameData["name"]}, <br> Thank you for your Response! <br> We'll get back to you soon. </p>
+    `;
 
-    document.querySelector(".code").innerHTML = out
+    let outSection = document.querySelector(".thanksOutputContainer");
 
- }
+    outSection.innerHTML = output;
 
-let form = document.forms['contactForm'];
-form.addEventListener("submit", getValues);
+    let formThanksModal = new bootstrap.Modal(
+        document.getElementById("formThanksModal")
+    );
+    
+    formThanksModal.show();
+};
 
- console.log("Hello") */

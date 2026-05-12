@@ -825,7 +825,7 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     margin: opx;
     border-radius: 30px;
-    height: 850px;
+    height: 900px;
 }
 
 .contactForm h1, label{
@@ -865,4 +865,20 @@ input::-webkit-inner-spin-button {
 
 .contactForm button:hover{
     background-color: rgb(16, 179, 179);
+}
+
+/* Form pop up thanks styling */
+#formThanksModal{
+    text-align: center;
+}
+
+.thanksOutputContainer{
+    background-color: #dff742;
+    /* background-color: #16c8e83c; */
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.modal-footer button{
+    background-color: #002d68;
 }

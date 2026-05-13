@@ -1,3 +1,6 @@
+
+// Form pop up thank you 
+
 let myForm = document.forms['contactForm'];
 
 myForm.addEventListener("submit", getName);
@@ -26,3 +29,27 @@ function getName(event)
     formThanksModal.show();
 };
 
+
+// Number counter adopt pg 
+// TBC Not right yet - must call by id of dragon's counter clicked each respectively
+
+changeNumber = (type) =>
+{
+    let num = document.getElementById('adoptee1KitNumber').value;
+
+    if  (type == "inc")
+    {
+        num ++;
+    };
+
+    if  (type == "dec")
+    {
+        if (num != 0)
+        {
+            num -=1;
+        }
+    };
+
+    document.getElementById('adoptee1KitNumber').value = num;
+    
+}

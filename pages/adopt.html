@@ -35,11 +35,24 @@
 
                 </div>
 
-                <div class="search">
-                    <button class="searchItem"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input class="searchItem bar" type="search" placeholder="Search">
-                    <button class="searchItem"><i class="fa-solid fa-basket-shopping"></i></button>
+            <div class="search">
+                
+                <button class="searchItem" onclick="searchDropdownFunction()"><i class="fa-solid fa-magnifying-glass"></i></button> 
+
+                <div class="dropdown">
+                    <input type="text" onclick="searchDropdownFunction()" placeholder="Search..." id="searchInput" onkeyup="filterFunction()" class="searchItem bar dropbtn">
+                    <div id="searchDropdown" class="dropdownContent">
+                        <a href="#blueDragon">Blue Dragon</a>
+                        <a href="#griffin">Griffin</a>
+                        <a href="#waterWisp">Water Wisp</a>
+                        <a href="#pegasus">Pegasus</a>
+                        <a href="#forestSpirit">Forest Spirit</a>
+                    </div>
                 </div>
+
+                <button class="searchItem"><i class="fa-solid fa-basket-shopping"></i></button>
+            </div>                
+
             </div>
             <div class ="mainAdoptTitle" >
                 <h1 class="altPageTitle">Adopt A creature</h1>
@@ -407,7 +420,7 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 
 </body>
 </html>

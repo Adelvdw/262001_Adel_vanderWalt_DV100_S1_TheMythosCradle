@@ -32,8 +32,29 @@ function getName(event)
 
 // Search bar/filter dropdown
 
+// on click show dropdown
+function searchDropdownFunction(){
+    document.getElementById("searchDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
 
+    // getting type input
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toLowerCase();
+
+    // get all <a></a> in container
+    let dropdown = document.getElementById("searchDropdown");
+    let a = dropdown.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++){
+        textValue = a[i].textContent || a[i].innerText;
+        if (textValue.toLowerCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
 
 
 

@@ -38,10 +38,24 @@
             </div>
 
             <div class="search">
-                <button class="searchItem"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="searchItem bar" type="search" placeholder="Search">
+                
+                <button class="searchItem" onclick="searchDropdownFunction()"><i class="fa-solid fa-magnifying-glass"></i></button> 
+
+                <div class="dropdown">
+                    <input type="text" onclick="searchDropdownFunction()" placeholder="Search..." id="searchInput" onkeyup="filterFunction()" class="searchItem bar dropbtn">
+                    <div id="searchDropdown" class="dropdownContent">
+                        <a href="adopt.html#blueDragon">Blue Dragon</a>
+                        <a href="adopt.html#kitsune">Kitsune</a>
+                        <a href="adopt.html#griffin">Griffin</a>
+                        <a href="adopt.html#waterWisp">Water Wisp</a>
+                        <a href="adopt.html#pegasus">Pegasus</a>
+                        <a href="adopt.html#forestSpirit">Forest Spirit</a>
+                    </div>
+                </div>
+
                 <button class="searchItem"><i class="fa-solid fa-basket-shopping"></i></button>
             </div>
+
         </div>
         <div class ="mainAdoptTitle" >
             <h1 class="altPageTitle">CONTACT US</h1>
@@ -93,7 +107,7 @@
 
             </div>
             <div class="contactForm">
-                <form name="contactForm">
+                <form name="contactForm" id="contactForm">
                     <h1>SEND US A MESSAGE</h1>
                     <div class="formElement">
                         <label for="name">Your name</label>
@@ -182,7 +196,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 
 </body>
 </html>

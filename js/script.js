@@ -1,9 +1,16 @@
 
 // Form pop up thank you 
 
-let myForm = document.forms['contactForm'];
+// wait for page to load
+document.addEventListener("DOMContentLoaded", function(){
+    // find form in html
+    let myForm = document.forms['contactUsForm'];
 
-myForm.addEventListener("submit", getName);
+    // listen for form submit if there is a contact form on the page so it doesn't get confused in the other 2 pgs
+    if (myForm) {
+        myForm.addEventListener("submit", getName);
+    }
+});
 
 function getName(event)
 {
@@ -65,11 +72,19 @@ function filterFunction() {
 
 
 // Number counter adopt pg 
-// TBC Not right yet - must call by id of dragon's counter clicked each respectively
 
-changeNumber = (type) =>
+
+const changeNumber = (type, button) =>
 {
-    let num = document.getElementById('adoptee1KitNumber').value;
+    // find counter that the pressed button belongs to
+    let parentCounter = button.parentElement;
+
+    // Use that counter and identify its number counter input (the number)
+    let inputField = parentCounter.querySelector('input[type="number"]');
+
+
+    // get current value and make it an int not a string
+    let num = parseInt(inputField.value);
 
     if  (type == "inc")
     {
@@ -84,6 +99,6 @@ changeNumber = (type) =>
         }
     };
 
-    document.getElementById('adoptee1KitNumber').value = num;
+    inputField.value = num;
     
 }

@@ -41,7 +41,24 @@
 
             <div class="search">
                 <button class="searchItem"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="searchItem bar" type="search" placeholder="Search">
+                <!-- Search dropdown -->
+
+                <!-- <input class="searchItem bar" type="search" placeholder="Search"> -->
+
+                <div class="dropdown">
+                    <button onclick="searchDropdownFunction()" class="dropbtn">Dropdown</button>
+                    <div id="searchDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterFunction()" class="searchItem bar">
+                        <a href="pages/adopt.html#blueDragon">Blue Dragon</a>
+                        <a href="pages/adopt.html#kitsune">Kitsune</a>
+                        <a href="pages/adopt.html#griffin">Griffin</a>
+                        <a href="pages/adopt.html#waterWisp">Water Wisp</a>
+                        <a href="pages/adopt.html#pegasus">Pegasus</a>
+                        <a href="pages/adopt.html#forestSpirit">Forest Spirit</a>
+                    </div>
+                </div>
+
+
                 <button class="searchItem"><i class="fa-solid fa-basket-shopping"></i></button>
             </div>
         </div>

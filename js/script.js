@@ -30,6 +30,19 @@ function getName(event)
 };
 
 
+// Search bar/filter dropdown
+
+
+
+
+
+
+
+
+
+
+
+
 // Number counter adopt pg 
 // TBC Not right yet - must call by id of dragon's counter clicked each respectively
 

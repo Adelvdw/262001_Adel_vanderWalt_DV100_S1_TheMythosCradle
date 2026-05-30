@@ -1,6 +1,16 @@
 
-// Form pop up thank you 
+// let Adoptees = document.getElementsByClassName("AdopteeSectionContainer")
+//  sectionId
 
+// Add Animal card on Add to cradle click
+let AddCardToCradle = (event) => {
+    event.preventDefault();
+
+    // let currentAdoptee = 
+}
+
+
+// Form pop up thank you 
 // wait for page to load
 document.addEventListener("DOMContentLoaded", function(){
     // find form in html
@@ -12,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
+// Get name for thanks pop-up from form
 function getName(event)
 {
     event.preventDefault();
@@ -84,13 +95,6 @@ function filterFunction() {
 }
 
 
-
-
-
-
-
-
-
 // Number counter adopt pg 
 
 
@@ -122,3 +126,4 @@ const changeNumber = (type, button) =>
     inputField.value = num;
     
 }
+

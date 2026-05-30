@@ -37,6 +37,26 @@ function getName(event)
 };
 
 
+
+// NOT Working yet tbc
+// Open Cart modal
+function openCart(){
+    // event.preventDefault();
+
+    let cartModal = new bootstrap.Modal(
+        document.getElementById("cartModal")
+    );
+    
+    cartModal.show();
+}
+
+
+
+
+// on add to cart send card info and amount to cart modal
+
+
+
 // Search bar/filter dropdown
 
 // on click show dropdown

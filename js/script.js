@@ -1,3 +1,23 @@
+// wait for page to load
+document.addEventListener("DOMContentLoaded", function(){})
+
+
+let addCard = (button) => {
+    console.log("addcardTriggeered")
+    let parentCard = button.closest('.adopteeSection');
+
+    // Grabbing all the values I will reuse for Cart cards
+        let cardId = parentCard.id;
+        let cardImage = parentCard.querySelector('.adopteeImage img').src;
+        let cardPrice = parentCard.querySelector('.adopteeHorizontalTextGap h3').textContent;
+        let cardNumberAmount = parentCard.querySelector('.adoptNumberCounter input').value;
+        console.log(cardId, cardImage, cardPrice, cardNumberAmount);
+
+    console.log("buttonclicked");
+
+};
+
+
 
 
 // on add to cart button clicked
@@ -23,24 +43,22 @@
 //  sectionId
 
 // Add Animal card on Add to cradle click
-let AddCardToCradle = (event) => {
-    event.preventDefault();
-
-    // let currentAdoptee = 
-}
+// let AddCardToCradle = (event) => {
+//     // event.preventDefault();
+//     console.log("buttonclicked")
+//     // let currentAdoptee = 
+// }
 
 
 // Form pop up thank you 
-// wait for page to load
-document.addEventListener("DOMContentLoaded", function(){
+
     // find form in html
     let myForm = document.forms['contactUsForm'];
 
     // listen for form submit if there is a contact form on the page so it doesn't get confused in the other 2 pgs
     if (myForm) {
         myForm.addEventListener("submit", getName);
-    }
-});
+    };
 
 // Get name for thanks pop-up from form
 function getName(event)

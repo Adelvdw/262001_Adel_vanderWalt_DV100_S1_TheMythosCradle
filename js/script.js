@@ -1,4 +1,24 @@
 
+
+// on add to cart button clicked
+// find section /sectionID it belongs to and grab name,pic,price,amount and counters and add delete button
+// push those into a new card (template & sub info grabbed)
+// Clear AddCard Action to empty?
+
+// on open cart
+// make modal pop up open (Done:) )
+// Set up cards and display them 
+// set continue searching to close(think is so already)
+// Set Adopt finish to refresh page (clearing items)
+
+
+
+
+
+
+
+
+
 // let Adoptees = document.getElementsByClassName("AdopteeSectionContainer")
 //  sectionId
 

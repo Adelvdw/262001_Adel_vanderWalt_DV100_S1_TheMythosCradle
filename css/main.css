@@ -1,5 +1,11 @@
 /* General */
 
+
+/* Fix counter +- layout now and add to cart */
+
+
+
+
 /*colours: darkBlue #002d68 , yellow #e9ad1c , 
 lightBlue #15d5f5 , black #000000 , white #ffffff ,
 */
@@ -642,7 +648,7 @@ footer h4{
 /* Adoptee section on Adopt page */
 
 .adopteeSection, .altAdopteeSection{
-    height: 80vh;
+    height: 100vh;
 }
 
 .altAdopteeSection{
@@ -654,8 +660,8 @@ footer h4{
     flex-direction: row;
     justify-content: space-evenly;
     align-content: center;
-    padding: 90px 8%;
-    gap: 5%;
+    padding: 80px 8%;
+    gap: 10px;
 }
 
 .AdopteeSectionContainer h2{
@@ -664,6 +670,9 @@ footer h4{
 
 .altAdopteeInfo{
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
  .adopteeImage{
@@ -717,8 +726,18 @@ text-decoration: line-through 2px;
     flex-direction: row;
     gap: 40px;
     align-items: center;
-    margin-bottom: 50px;
+    height: 60px;
+    /* margin-bottom: 50px; */
 }
+
+.toCradleCart a{
+    display: flex;
+    /* margin-bottom: 10px; */
+} 
+    
+/* .plusAdoptCart, .minusAdoptCart{
+
+} */
 
 .toCradleCart, .adoptNumberCounter, .altAdoptNumberCounter{
     display: flex;
@@ -730,7 +749,7 @@ text-decoration: line-through 2px;
     padding: 20px;
     border-radius: 10px;
     width: 250px;
-    height: 30px;
+    height: 60px;
 }
 
 .adoptNumberCounter button, .adoptNumberCounter input, .altAdoptNumberCounter button, .altAdoptNumberCounter input{

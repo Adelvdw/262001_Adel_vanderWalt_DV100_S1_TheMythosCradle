@@ -34,9 +34,9 @@ let addCard = (button) => {
     };
 
         // send card to adoptCards list
-        adoptCards.push(cardInfo);
+    adoptCards.push(cardInfo);
 
-        showInCart(adoptCards)
+    showInCart(adoptCards)
 
         // WIP wanna change price to no. only (?)
         
@@ -44,7 +44,7 @@ let addCard = (button) => {
         //     return cardPrice.replace(/[])
         // }
 
-        console.log(cardId, cardImage, cardPrice, cardNumberAmount, adoptName);
+
 
     console.log("buttonclicked");
 
@@ -125,7 +125,11 @@ let createAdoptCard = (cardObject) => {
     // Add Price Calc here to Sub in instead
 
     let cancelCard = document.createElement("button");
+    cancelCard.classList.add("cancelCardButton");
     cancelCard.textContent = "Remove Item"
+    cancelCard.onclick = function(){
+        removeCard(this);
+    };
     // Add RemoveCard Function here
 
 
@@ -158,6 +162,26 @@ let createAdoptCard = (cardObject) => {
 
 }
 
+const removeCard = (removeButton) => {
+    let cardToRemove = removeButton.closest('.cartCard');
+    let cardToRemoveName = cardToRemove.querySelector('h2').textContent;
+    console.log(cardToRemoveName);
+    adoptCards = adoptCards.filter((card) => {
+        return card.name !== cardToRemoveName;
+    });
+
+    showInCart(adoptCards);
+}
+
+function clearCart(){
+
+    // Is bit iffy
+    window.location.reload();
+    adoptCards = ""
+    cardContainer.innerHTML = ""
+    // sessionStorage.clear();
+
+} 
 
 // STILL DO / Figure out
 // Set Adopt finish to refresh page (clearing items)
@@ -288,4 +312,7 @@ const changeNumber = (type, button) =>
     inputField.value = num;
     
 }
+
+
+
 

@@ -49,7 +49,7 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 }
 
 .cartCard button {
-    background-color: #f4c726;
+    background-color: #A28632;
     color: white;
     border: none;
     border-radius: 10px;
@@ -57,6 +57,10 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
     font-size: 16pt;
     width: 250px;
     height: 60px;
+}
+
+.cancelCardButton:hover{
+    background-color: #f4c726;
 }
 
 .cartCard .adoptNumberCounter{
@@ -67,11 +71,19 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
     justify-content: flex-start;
 }
 
-.minusAdoptCart button, .plusAdoptCart button{
-    /* height: 50px; */
-    display: flex;
-    /* align-content: center; */
+#cartModal .btn {
+    height: 60px;
+    width: 250px;
+    font-weight: 600;
+    font-size: 16pt;
+    border-radius: 10px;
+    border: none;
 }
+
+#cartModal .btn:hover{
+    background-color: #15d5f5;
+}
+
 
 
 /* search in nav */
@@ -649,9 +661,9 @@ footer h4{
 
 /* Adoptee section on Adopt page */
 
-.adopteeSection, .altAdopteeSection{
+/* .adopteeSection, .altAdopteeSection{
     height: 100vh;
-}
+} */
 
 .altAdopteeSection{
     background-color: #002d68;
@@ -736,7 +748,7 @@ text-decoration: line-through 2px;
 .toCradleCart, .adoptNumberCounter, .altAdoptNumberCounter{
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-items: center; 
     text-decoration: none;
     color: white;
     font-weight: bold;

@@ -14,7 +14,6 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 
 
 
-
 /* Cart Modal */
 #cardContainer{
     display: flex;
@@ -23,14 +22,48 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 
 .cartCard {
     display: flex;
-    height: 50px;
+    flex-direction: row;
+    /* height: 300px; */
+    border: solid 1px rgb(156, 156, 156);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 200px;
+    background-color:#002d68;
 }
 
-
-.cardImageContainer{
-    height: 16px;
-
+.cartCard img{
+    height: 300px;
+    width: auto;
+    border-radius: 10px;
 }
+
+.cardTextContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 10%;
+}
+
+.cartCard h2, .cartCard h3, .cartCard p{
+    color: white;
+}
+
+.cartCard button {
+    background-color: #f4c726;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16pt;
+    width: 250px;
+    height: 60px;
+}
+
+.cartCard .adoptNumberCounter{
+    background-color: #15d5f5;
+    margin-bottom: 10px;
+}
+
 
 
 /* search in nav */
@@ -629,11 +662,13 @@ footer h4{
     margin: 0px;
 }
 
-.altAdopteeInfo{
-    color: white;
+.altAdopteeInfo, .adopteeInfo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.altAdopteeInfo{
+   color: white;
 }
 
  .adopteeImage{
@@ -688,21 +723,12 @@ text-decoration: line-through 2px;
     gap: 40px;
     align-items: center;
     height: 60px;
-    /* margin-bottom: 50px; */
 }
-
-.toCradleCart a{
-    display: flex;
-    /* margin-bottom: 10px; */
-} 
-    
-/* .plusAdoptCart, .minusAdoptCart{
-
-} */
 
 .toCradleCart, .adoptNumberCounter, .altAdoptNumberCounter{
     display: flex;
     justify-content: center;
+    align-self: center;
     text-decoration: none;
     color: white;
     font-weight: bold;

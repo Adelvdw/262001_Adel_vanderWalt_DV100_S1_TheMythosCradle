@@ -28,7 +28,8 @@ let addCard = (button) => {
         name: adoptName,
         image: cardImage,
         price: cardPrice,
-        amount: cardNumberAmount
+        amount: cardNumberAmount,
+        style: parentCard
 
     };
 
@@ -65,8 +66,13 @@ let showInCart = (adoptCards) => {
 // Create adopt cards in cart with js 
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
+
+
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
+
+    // If later change to alternating card styles
+    // cartCard.classList.add(cardObject.style.classList)
 
     let cardImageContainer = document.createElement("div");
     cardImageContainer.classList.add("cardImageContainer");
@@ -78,10 +84,11 @@ let createAdoptCard = (cardObject) => {
     cardTextContainer.classList.add("cardTextContainer");
 
     let cardName = document.createElement("h2");
-    cardName.h2 = cardObject.name;
+    cardName.textContent = cardObject.name;
+    cardName.classList.add(cardObject.name.classList)
 
     let singleAdoptPrice = document.createElement("h3");
-    singleAdoptPrice.h3 = cardObject.price;
+    singleAdoptPrice.textContent = cardObject.price;
 
     let adoptNumberCounter = document.createElement("div");
     adoptNumberCounter.classList.add("adoptNumberCounter")
@@ -113,10 +120,12 @@ let createAdoptCard = (cardObject) => {
         changeNumber('inc', this);
     }
 
-    let cardTotalPrice = "Total = price w/o R x amount in input field"
+    let cardTotalPrice = document.createElement("h3");
+    cardTotalPrice.textContent = "Total = price w/o R x amount in input field";
     // Add Price Calc here to Sub in instead
 
     let cancelCard = document.createElement("button");
+    cancelCard.textContent = "Remove Item"
     // Add RemoveCard Function here
 
 
@@ -128,7 +137,7 @@ let createAdoptCard = (cardObject) => {
     cardImageContainer.appendChild(cardImage)
 
     // Content right
-    cardContainer.appendChild(cardTextContainer);
+    cartCard.appendChild(cardTextContainer);
     cardTextContainer.appendChild(cardName);
     cardTextContainer.appendChild(singleAdoptPrice);
     cardTextContainer.appendChild(adoptNumberCounter);

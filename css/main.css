@@ -62,8 +62,16 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 .cartCard .adoptNumberCounter{
     background-color: #15d5f5;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
+.minusAdoptCart button, .plusAdoptCart button{
+    /* height: 50px; */
+    display: flex;
+    /* align-content: center; */
+}
 
 
 /* search in nav */

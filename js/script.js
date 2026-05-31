@@ -71,7 +71,7 @@ let createAdoptCard = (cardObject) => {
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
 
-    // If later change to alternating card styles
+    // For If later change to alternating card styles
     // cartCard.classList.add(cardObject.style.classList)
 
     let cardImageContainer = document.createElement("div");
@@ -159,34 +159,19 @@ let createAdoptCard = (cardObject) => {
 }
 
 
-// on add to cart button clicked
-// find section /sectionID it belongs to and grab name,pic,price,amount and counters and add delete button
-// push those into a new card (template & sub info grabbed)
-// Clear AddCard Action to empty?
-
-// on open cart
-// make modal pop up open (Done:) )
-// Set up cards and display them 
-// set continue searching to close(think is so already)
+// STILL DO / Figure out
 // Set Adopt finish to refresh page (clearing items)
+// Calculate and print price totals for cards
+// TotalsTotal?
+
+// Fix CSS Button issue
+// NB fix button-to-right in card Cart
+
+// Check if animal's card exists already, if so just update items/remove prev card
+
+// Add call cart & cartmodal to nav & pgs?
 
 
-
-
-
-
-
-
-
-// let Adoptees = document.getElementsByClassName("AdopteeSectionContainer")
-//  sectionId
-
-// Add Animal card on Add to cradle click
-// let AddCardToCradle = (event) => {
-//     // event.preventDefault();
-//     console.log("buttonclicked")
-//     // let currentAdoptee = 
-// }
 
 
 // Form pop up thank you 

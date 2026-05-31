@@ -84,20 +84,70 @@ let createAdoptCard = (cardObject) => {
     singleAdoptPrice.h3 = cardObject.price;
 
     let adoptNumberCounter = document.createElement("div");
+    adoptNumberCounter.classList.add("adoptNumberCounter")
+    // Create an Alt style card?
+
+    // minus button
+    let minusAdoptCart = document.createElement("button");
+    minusAdoptCart.classList.add("minusAdoptCart");
+    minusAdoptCart.textContent = "-";
+
+    // Set button onclick trigger
+    minusAdoptCart.onclick = function(){
+        changeNumber('dec', this);
+    }
+
+    // input no. field
+    let inputNumberField = document.createElement("input");
+    inputNumberField.min = "1";
+    inputNumberField.type = "number";
+    inputNumberField.value = cardObject.amount;
+
+    // plus button
+    let plusAdoptCart = document.createElement("button");
+    plusAdoptCart.classList.add("plusAdoptCart");
+    plusAdoptCart.textContent = "+";
+
+    // Set button onclick trigger
+    plusAdoptCart.onclick = function(){
+        changeNumber('inc', this);
+    }
+
+    let cardTotalPrice = "Total = price w/o R x amount in input field"
+    // Add Price Calc here to Sub in instead
 
     let cancelCard = document.createElement("button");
+    // Add RemoveCard Function here
 
+
+    // Creating hierarchy
     cardContainer.appendChild(cartCard);
-    cartCard.appendChild(cardImage);
+
+    // image left
+    cartCard.appendChild(cardImageContainer);
+    cardImageContainer.appendChild(cardImage)
+
+    // Content right
+    cardContainer.appendChild(cardTextContainer);
+    cardTextContainer.appendChild(cardName);
+    cardTextContainer.appendChild(singleAdoptPrice);
+    cardTextContainer.appendChild(adoptNumberCounter);
+    // Number counter (right):
+    adoptNumberCounter.appendChild(minusAdoptCart);
+    adoptNumberCounter.appendChild(inputNumberField);
+    adoptNumberCounter.appendChild(plusAdoptCart);
+    // rest of unindented content right
+    cardTextContainer.appendChild(cardTotalPrice);
+    cardTextContainer.appendChild(cancelCard);
+
+
+
 
 
     console.log("CreateCard is called");
 
 
-
-
 }
-
 
 
 // on add to cart button clicked

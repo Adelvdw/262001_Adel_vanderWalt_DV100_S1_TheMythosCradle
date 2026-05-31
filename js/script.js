@@ -1,22 +1,102 @@
 // wait for page to load
-document.addEventListener("DOMContentLoaded", function(){})
+document.addEventListener("DOMContentLoaded", function(){});
+
+// Get HTML elements to use/link later
+let cardContainer = document.getElementById("cardContainer");
+
+// list of Cards used by cart 
+let adoptCards = [];
 
 
+
+
+
+// On addtocart click create card for adoptee
 let addCard = (button) => {
-    console.log("addcardTriggeered")
-    let parentCard = button.closest('.adopteeSection');
+    console.log("addcardTriggered")
+    let parentCard = button.closest('.adopteeSection, .altAdopteeSection');
+
 
     // Grabbing all the values I will reuse for Cart cards
-        let cardId = parentCard.id;
-        let cardImage = parentCard.querySelector('.adopteeImage img').src;
-        let cardPrice = parentCard.querySelector('.adopteeHorizontalTextGap h3').textContent;
-        let cardNumberAmount = parentCard.querySelector('.adoptNumberCounter input').value;
-        console.log(cardId, cardImage, cardPrice, cardNumberAmount);
+    let cardId = parentCard.id;
+    let adoptName = parentCard.querySelector('h2').textContent;
+    let cardImage = parentCard.querySelector('.adopteeImage img').src;
+    let cardPrice = parentCard.querySelector('.adopteeHorizontalTextGap h3').textContent;
+    let cardNumberAmount = parentCard.querySelector('.adoptNumberCounter input, .altAdoptNumberCounter input',).value;
+
+    let cardInfo = {
+        name: adoptName,
+        image: cardImage,
+        price: cardPrice,
+        amount: cardNumberAmount
+
+    };
+
+        // send card to adoptCards list
+        adoptCards.push(cardInfo);
+
+        showInCart(adoptCards)
+
+        // WIP wanna change price to no. only (?)
+        
+        // function removePriceLetters(cardPrice){
+        //     return cardPrice.replace(/[])
+        // }
+
+        console.log(cardId, cardImage, cardPrice, cardNumberAmount, adoptName);
 
     console.log("buttonclicked");
 
 };
 
+
+
+let showInCart = (adoptCards) => {
+    // make Clean slate to populate
+    cardContainer.innerHTML = "";
+    
+    adoptCards.forEach(cardObject => {
+        createAdoptCard(cardObject);
+        
+    });
+};
+
+
+// Create adopt cards in cart with js 
+// programmatically making HTML hierarchies
+let createAdoptCard = (cardObject) => {
+    let cartCard = document.createElement("div");
+    cartCard.classList.add("cartCard");
+
+    let cardImageContainer = document.createElement("div");
+    cardImageContainer.classList.add("cardImageContainer");
+
+    let cardImage = document.createElement("img");
+    cardImage.src = cardObject.image;
+
+    let cardTextContainer = document.createElement("div");
+    cardTextContainer.classList.add("cardTextContainer");
+
+    let cardName = document.createElement("h2");
+    cardName.h2 = cardObject.name;
+
+    let singleAdoptPrice = document.createElement("h3");
+    singleAdoptPrice.h3 = cardObject.price;
+
+    let adoptNumberCounter = document.createElement("div");
+
+    let cancelCard = document.createElement("button");
+
+    cardContainer.appendChild(cartCard);
+    cartCard.appendChild(cardImage);
+
+
+    console.log("CreateCard is called");
+
+
+
+
+}
 
 
 
@@ -97,7 +177,7 @@ function openCart(){
     );
     
     cartModal.show();
-}
+};
 
 
 
@@ -111,7 +191,7 @@ function openCart(){
 // on click show dropdown
 function searchDropdownFunction(){
     document.getElementById("searchDropdown").classList.toggle("show");
-}
+};
 
 function filterFunction() {
 
@@ -130,7 +210,7 @@ function filterFunction() {
             a[i].style.display = "none";
         }
     }
-}
+};
 
 
 // Number counter adopt pg 

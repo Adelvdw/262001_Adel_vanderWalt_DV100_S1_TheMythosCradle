@@ -70,6 +70,20 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 
 
 
+    /* WIP */
+.cartCard {
+    display: flex;
+    height: 50px;
+}
+
+#cardContainer{
+    display: flex;
+    flex-direction: column;
+}
+.cardImageContainer{
+    height: 16px;
+
+}
 
 
 /* search in nav */

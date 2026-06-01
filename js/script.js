@@ -6,10 +6,11 @@ let cardContainer = document.getElementById("cardContainer");
 
 // list of Cards used by cart 
 let adoptCards = [];
+let loadCards = () => {
+    adoptCards = JSON.parse(localStorage.getItem("adoptCards")) || [];
+};
 
-
-
-
+loadCards();
 
 // On addtocart click create card for adoptee
 let addCard = (button) => {
@@ -33,8 +34,38 @@ let addCard = (button) => {
 
     };
 
-        // send card to adoptCards list
-    adoptCards.push(cardInfo);
+        // NB SOLUTION FOUND FOR CHECK CARDS' TYPES
+        // Add variable if match and if it does update that cardobject,
+        // Add if statement before push info so if var set earlier is set to same then dont push info and reset var
+
+    let cardDuplicate = false;
+
+    adoptCards.forEach(cardObject => {
+    if (cardInfo.name == cardObject.name){
+        console.log("name is same");
+        cardDuplicate = true;
+        cardObject.amount = cardInfo.amount;     
+        // Now delete old/only update 
+        
+        // Fix Array double call issue cuz cant call itself before it is defined
+        // let adoptCardsNew = adoptCards.filter((card) => {
+        // return adoptCards.card !== cardObject;
+        // });
+        // let adoptCards = adoptCardsNew;
+    }});  
+
+    // send card to adoptCards list if not had duplicate
+    if (cardDuplicate !== true){
+        adoptCards.push(cardInfo);
+        saveCards();
+        console.log("new card sent")
+
+    }
+    else if (cardDuplicate == true){
+        console.log("CardUpdated")
+    };
+
+
 
     showInCart(adoptCards)
 
@@ -51,8 +82,8 @@ let addCard = (button) => {
 };
 
 
-
 let showInCart = (adoptCards) => {
+    loadCards();
     // make Clean slate to populate
     cardContainer.innerHTML = "";
     
@@ -67,12 +98,35 @@ let showInCart = (adoptCards) => {
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
 
+    // Use only one Card per animal
+    // WIP NOT WORKING - Moving attempts to addCard
+    // QUESTION
+    
+    // console.log(cardObject)
+    // console.log(cardObject.name)
+    // console.log(adoptCards.name)
+    // if  (cardObject.name == adoptCards.name)
+    // {
+    //     console.log("same card")
+    //     adoptCards = adoptCards.filter((card) => {
+    //         return card.name !== cardObject;
+    //         showInCart(adoptCards);
+    //     });
+    // };
+    
 
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
 
+
+
+    // QUESTION
     // For If later change to alternating card styles
     // cartCard.classList.add(cardObject.style.classList)
+
+
+    // QUESTION
+    // Totaltotal calc
 
     let cardImageContainer = document.createElement("div");
     cardImageContainer.classList.add("cardImageContainer");
@@ -123,6 +177,7 @@ let createAdoptCard = (cardObject) => {
     let cardTotalPrice = document.createElement("h3");
     cardTotalPrice.textContent = "Total = price w/o R x amount in input field";
     // Add Price Calc here to Sub in instead
+    // QUESTION
 
     let cancelCard = document.createElement("button");
     cancelCard.classList.add("cancelCardButton");
@@ -130,8 +185,6 @@ let createAdoptCard = (cardObject) => {
     cancelCard.onclick = function(){
         removeCard(this);
     };
-    // Add RemoveCard Function here
-
 
     // Creating hierarchy
     cardContainer.appendChild(cartCard);
@@ -153,12 +206,7 @@ let createAdoptCard = (cardObject) => {
     cardTextContainer.appendChild(cardTotalPrice);
     cardTextContainer.appendChild(cancelCard);
 
-
-
-
-
     console.log("CreateCard is called");
-
 
 }
 
@@ -170,16 +218,19 @@ const removeCard = (removeButton) => {
         return card.name !== cardToRemoveName;
     });
 
+    saveCards();
     showInCart(adoptCards);
+
 }
 
 function clearCart(){
 
-    // Is bit iffy
     window.location.reload();
     adoptCards = ""
     cardContainer.innerHTML = ""
     // sessionStorage.clear();
+    saveCards();
+
 
 } 
 
@@ -188,12 +239,10 @@ function clearCart(){
 // Calculate and print price totals for cards
 // TotalsTotal?
 
-// Fix CSS Button issue
-// NB fix button-to-right in card Cart
-
 // Check if animal's card exists already, if so just update items/remove prev card
 
-// Add call cart & cartmodal to nav & pgs?
+// Add call cart & cartmodal to nav & pgs NB 
+// Change to local storage add NB
 
 
 
@@ -239,10 +288,12 @@ function getName(event)
 // Open Cart modal
 function openCart(){
     // event.preventDefault();
-
+    
     let cartModal = new bootstrap.Modal(
         document.getElementById("cartModal")
     );
+
+    showInCart(adoptCards);
     
     cartModal.show();
 };
@@ -313,6 +364,12 @@ const changeNumber = (type, button) =>
     
 }
 
+let saveCards = () => {
+    // update stored task list:
+    localStorage.setItem("adoptCards", JSON.stringify(adoptCards));
+}
+
+window.addEventListener("DOMContentLoaded", loadCards);
 
 
 

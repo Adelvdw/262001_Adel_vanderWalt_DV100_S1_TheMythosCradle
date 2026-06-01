@@ -193,6 +193,27 @@
     </div>
 
 
+        <!-- Cart Modal -->
+    <div class="modal" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="cardContainer">
+
+            <!-- Cards will come here -->
+            <p>No items in cart.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Searching</button>
+            <button type="button" class="btn btn-primary" onclick="clearCart()" data-bs-dismiss="modal">Finish Adoption</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

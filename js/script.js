@@ -44,14 +44,11 @@ let addCard = (button) => {
     if (cardInfo.name == cardObject.name){
         console.log("name is same");
         cardDuplicate = true;
+        console.log(cardObject.amount);
+        console.log(cardInfo.amount);
         cardObject.amount = cardInfo.amount;     
-        // Now delete old/only update 
+
         
-        // Fix Array double call issue cuz cant call itself before it is defined
-        // let adoptCardsNew = adoptCards.filter((card) => {
-        // return adoptCards.card !== cardObject;
-        // });
-        // let adoptCards = adoptCardsNew;
     }});  
 
     // send card to adoptCards list if not had duplicate
@@ -61,8 +58,9 @@ let addCard = (button) => {
         console.log("new card sent")
 
     }
-    else if (cardDuplicate == true){
+    else {
         console.log("CardUpdated")
+        saveCards();
     };
 
 
@@ -98,29 +96,10 @@ let showInCart = (adoptCards) => {
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
 
-    // Use only one Card per animal
-    // WIP NOT WORKING - Moving attempts to addCard
-    // QUESTION
-    
-    // console.log(cardObject)
-    // console.log(cardObject.name)
-    // console.log(adoptCards.name)
-    // if  (cardObject.name == adoptCards.name)
-    // {
-    //     console.log("same card")
-    //     adoptCards = adoptCards.filter((card) => {
-    //         return card.name !== cardObject;
-    //         showInCart(adoptCards);
-    //     });
-    // };
-    
-
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
 
 
-
-    // QUESTION
     // For If later change to alternating card styles
     // cartCard.classList.add(cardObject.style.classList)
 
@@ -235,15 +214,11 @@ function clearCart(){
 } 
 
 // STILL DO / Figure out
-// Set Adopt finish to refresh page (clearing items)
+
 // Calculate and print price totals for cards
 // TotalsTotal?
 
 // Check if animal's card exists already, if so just update items/remove prev card
-
-// Add call cart & cartmodal to nav & pgs NB 
-// Change to local storage add NB
-
 
 
 
@@ -294,6 +269,14 @@ function openCart(){
     );
 
     showInCart(adoptCards);
+    
+    if (cardContainer.innerHTML == ""){
+        // let cardContainer = document.createElement("div");
+        let emptyCartText = document.createElement("h3");
+        emptyCartText.classList.add("emptyCartText");
+        emptyCartText.textContent = "No items in cart."
+        cardContainer.appendChild(emptyCartText);
+    }
     
     cartModal.show();
 };

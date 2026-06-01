@@ -18,21 +18,25 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 #cardContainer{
     display: flex;
     flex-direction: column;
+    padding: 0 200px;
+    align-items: center;
 }
 
 .cartCard {
     display: flex;
     flex-direction: row;
+    /* justify-content: center; */
     /* height: 300px; */
     border: solid 1px rgb(156, 156, 156);
     border-radius: 10px;
     padding: 20px;
     margin: 10px 200px;
     background-color:#002d68;
+    width: 1600px;
 }
 
 .cartCard img{
-    height: 300px;
+    height: 450px;
     width: auto;
     border-radius: 10px;
 }
@@ -40,8 +44,9 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 .cardTextContainer{
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    margin-left: 10%;
+    justify-content: space-around;
+    align-content: flex-start;
+    margin-left: 5%;
 }
 
 .cartCard h2, .cartCard h3, .cartCard p{
@@ -82,6 +87,10 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
 
 #cartModal .btn:hover{
     background-color: #15d5f5;
+}
+
+.emptyCartText{
+    padding: 50px;
 }
 
 
@@ -599,6 +608,7 @@ footer h4{
     padding: 25px;
     border-radius: 10px;
     width: 300px;
+    z-index: 1;
 }
 
 .fixedViewCradleButton:hover{

@@ -93,6 +93,13 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
     padding: 50px;
 }
 
+/* .modal-footer p {
+    margin-right: 40px;
+} */
+
+.modal-footer {
+    gap: 15px;
+}
 
 
 /* search in nav */
@@ -1008,7 +1015,7 @@ input::-webkit-inner-spin-button {
 }
 
 .thanksOutputContainer{
-    background-color: #dff742;
+    background-color: #15d3f5a8;
     /* background-color: #16c8e83c; */
     margin: 10px;
     border-radius: 8px;
@@ -1016,4 +1023,9 @@ input::-webkit-inner-spin-button {
 
 .modal-footer button{
     background-color: #002d68;
+    border: none;
+}
+
+.modal-footer button:hover{
+    background-color: #A28632;
 }

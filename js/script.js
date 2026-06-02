@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){});
 
 // Get HTML elements to use/link later
 let cardContainer = document.getElementById("cardContainer");
+let cartTotalText = document.getElementById("cartTotalText");
 
 // list of Cards used by cart 
 let adoptCards = [];
@@ -25,11 +26,21 @@ let addCard = (button) => {
     let cardPrice = parentCard.querySelector('.adopteeHorizontalTextGap h3').textContent;
     let cardNumberAmount = parentCard.querySelector('.adoptNumberCounter input, .altAdoptNumberCounter input',).value;
 
+    // Remove 'R' and ' ' from price to get number
+    // by replacing all a-z or\ space with empty, g for global so removes all letters in string and i so is not case sensitive
+    let realCardPrice = cardPrice.replace(/[a-z\s]/gi, '');
+    console.log(realCardPrice, "realPrice");
+
+    // let realCardPrice = cardPrice.replace(/[a-z\s\.]/gi, '') / 100;
+    // console.log(realCardPrice, "realPrice");
+    
+
     let cardInfo = {
         name: adoptName,
         image: cardImage,
         price: cardPrice,
-        amount: cardNumberAmount,
+        priceValue: realCardPrice,
+        amount: Number(cardNumberAmount),
         style: parentCard
 
     };
@@ -95,6 +106,7 @@ let showInCart = (adoptCards) => {
 // Create adopt cards in cart with js 
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
+    console.log("cardobject", cardObject);
 
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
@@ -154,7 +166,8 @@ let createAdoptCard = (cardObject) => {
     }
 
     let cardTotalPrice = document.createElement("h3");
-    cardTotalPrice.textContent = "Total = price w/o R x amount in input field";
+    cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
+    console.log(cardObject.priceValue * cardObject.amount, cardObject.priceValue, cardObject.amount);
     // Add Price Calc here to Sub in instead
     // QUESTION
 
@@ -346,6 +359,8 @@ const changeNumber = (type, button) =>
     inputField.value = num;
     
 }
+
+
 
 let saveCards = () => {
     // update stored task list:

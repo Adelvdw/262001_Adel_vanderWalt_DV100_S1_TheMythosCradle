@@ -30,7 +30,7 @@ let addCard = (button) => {
     let realCardPrice = cardPrice.replace(/[a-z\s,]/gi, '');
     console.log(realCardPrice, "realPrice");
 
-
+    // Group info into object to push later
     let cardInfo = {
         name: adoptName,
         image: cardImage,
@@ -41,29 +41,22 @@ let addCard = (button) => {
 
     };
 
-        // NB SOLUTION FOUND FOR CHECK CARDS' TYPES
-        // Add variable if match and if it does update that cardobject,
-        // Add if statement before push info so if var set earlier is set to same then dont push info and reset var
 
     let cardDuplicate = false;
 
+    // Update card if already exists
     adoptCards.forEach(cardObject => {
     if (cardInfo.name == cardObject.name){
         cardDuplicate = true;
-        cardObject.amount = cardInfo.amount;     
-
-        
+        cardObject.amount = cardInfo.amount;             
     }});  
 
     // send card to adoptCards list if not had duplicate
     if (cardDuplicate !== true){
         adoptCards.push(cardInfo);
         saveCards();
-        console.log("new card sent")
-
     }
     else {
-        console.log("CardUpdated")
         saveCards();
     };
 
@@ -91,10 +84,11 @@ let showInCart = (adoptCards) => {
 };
 
 
-// Create adopt cards in cart with js 
+// Create adopt cards in cart with js:
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
 
+    // Creating each element
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
 
@@ -116,7 +110,6 @@ let createAdoptCard = (cardObject) => {
 
     let adoptNumberCounter = document.createElement("div");
     adoptNumberCounter.classList.add("adoptNumberCounter")
-    // Create an Alt style card?
 
     // minus button
     let minusAdoptCart = document.createElement("button");
@@ -144,10 +137,11 @@ let createAdoptCard = (cardObject) => {
         changeNumber('inc', this);
     }
 
+    // Set total card price
     let cardTotalPrice = document.createElement("h3");
-    // cardPriceCalc(cardObject, cardTotalPrice);
     cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
 
+    // Add Remove button
     let cancelCard = document.createElement("button");
     cancelCard.classList.add("cancelCardButton");
     cancelCard.textContent = "Remove Item"
@@ -175,10 +169,9 @@ let createAdoptCard = (cardObject) => {
     cardTextContainer.appendChild(cardTotalPrice);
     cardTextContainer.appendChild(cancelCard);
 
-    console.log("CreateCard is called");
+};
 
-}
-
+// Remove card Function
 const removeCard = (removeButton) => {
     let cardToRemove = removeButton.closest('.cartCard');
     let cardToRemoveName = cardToRemove.querySelector('h2').textContent;
@@ -189,30 +182,15 @@ const removeCard = (removeButton) => {
     saveCards();
     showInCart(adoptCards);
 
-}
+};
 
 function clearCart(){
 
     window.location.reload();
     adoptCards = ""
     cardContainer.innerHTML = ""
-    // sessionStorage.clear();
     saveCards();
-
-
-} 
-
-// function cardPriceCalc(cardObject) {
-//     cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
-// };
-
-// STILL DO / Figure out
-
-// Calculate and print price totals for cards
-// TotalsTotal?
-
-// Check if animal's card exists already, if so just update items/remove prev card
-
+};
 
 
 // Form pop up thank you 
@@ -308,9 +286,7 @@ function filterFunction() {
 };
 
 
-// Number counter adopt pg 
-
-
+// Number counters
 const changeNumber = (type, button) =>
 {
     // find counter that the pressed button belongs to
@@ -318,7 +294,6 @@ const changeNumber = (type, button) =>
 
     // Use that counter and identify its number counter input (the number)
     let inputField = parentCounter.querySelector('input[type="number"]');
-
 
     // get current value and make it an int not a string
     let num = parseInt(inputField.value);
@@ -338,20 +313,19 @@ const changeNumber = (type, button) =>
 
     inputField.value = num;
 
-     let parentCard = parentCounter.closest('.adopteeSection, .altAdopteeSection, .cartCard');
-
+    // Get card button belongs to
+    let parentCard = parentCounter.closest('.adopteeSection, .altAdopteeSection, .cartCard');
     let adoptName = parentCard.querySelector('h2').textContent;
 
+    // Update card with new number, save cards and show new info in cart
     adoptCards.forEach(cardObject => {
         if (adoptName == cardObject.name){
             cardDuplicate = true;
             cardObject.amount = num;     
 
         }});  
-
     saveCards();
     showInCart(adoptCards);
-    // cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
 }
 
 
@@ -361,7 +335,6 @@ let saveCards = () => {
     localStorage.setItem("adoptCards", JSON.stringify(adoptCards));
 }
 
+// load cards saved cards once page has loaded
 window.addEventListener("DOMContentLoaded", loadCards);
-
-
 

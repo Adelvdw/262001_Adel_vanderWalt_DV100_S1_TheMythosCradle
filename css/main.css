@@ -1,20 +1,6 @@
-/* General */
-
-
-/* Fix counter +- layout now and add to cart */
-
-
-
-
-/*colours: darkBlue #002d68 , yellow #e9ad1c , 
-lightBlue #15d5f5 , black #000000 , white #ffffff ,
-*/
-
-
-
-
 
 /* Cart Modal */
+
 #cardContainer{
     display: flex;
     flex-direction: column;
@@ -93,14 +79,9 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
     padding: 50px;
 }
 
-/* .modal-footer p {
-    margin-right: 40px;
-} */
-
 .modal-footer {
     gap: 15px;
 }
-
 
 /* search in nav */
 
@@ -158,8 +139,7 @@ lightBlue #15d5f5 , black #000000 , white #ffffff ,
     padding-right: 10px;
 }
 
-
-
+/* General CSS across pages */
 
 body{
     margin: 0;
@@ -231,7 +211,7 @@ p{
 -webkit-text-stroke-color: #002d68;
 } 
 
-
+/* Home page */
 /* Section 1 hero */
 #mainHero{
         background-image: url(../assets/img/homeHeader.png);
@@ -678,10 +658,6 @@ footer h4{
 
 /* Adoptee section on Adopt page */
 
-/* .adopteeSection, .altAdopteeSection{
-    height: 100vh;
-} */
-
 .altAdopteeSection{
     background-color: #002d68;
 }
@@ -921,14 +897,6 @@ input::-webkit-inner-spin-button {
 .contactSection{
     padding: 60px 40px;
 }
-
-/* .contactContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-} */
-
 
 .contactInfo, .contactForm{
     width: 40%;

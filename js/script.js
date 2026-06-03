@@ -185,8 +185,7 @@ const removeCard = (removeButton) => {
 };
 
 function clearCart(){
-
-    window.location.reload();
+    window.location.href="../index.html";
     adoptCards = ""
     cardContainer.innerHTML = ""
     saveCards();

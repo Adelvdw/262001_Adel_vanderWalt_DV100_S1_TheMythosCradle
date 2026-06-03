@@ -1,5 +1,5 @@
 // wait for page to load
-document.addEventListener("DOMContentLoaded", function(){});
+// document.addEventListener("DOMContentLoaded", function(){});
 
 // Get HTML elements to use/link later
 let cardContainer = document.getElementById("cardContainer");
@@ -15,7 +15,6 @@ loadCards();
 
 // On addtocart click create card for adoptee
 let addCard = (button) => {
-    console.log("addcardTriggered")
     let parentCard = button.closest('.adopteeSection, .altAdopteeSection');
 
 
@@ -28,12 +27,9 @@ let addCard = (button) => {
 
     // Remove 'R' and ' ' from price to get number
     // by replacing all a-z or\ space with empty, g for global so removes all letters in string and i so is not case sensitive
-    let realCardPrice = cardPrice.replace(/[a-z\s]/gi, '');
+    let realCardPrice = cardPrice.replace(/[a-z\s,]/gi, '');
     console.log(realCardPrice, "realPrice");
 
-    // let realCardPrice = cardPrice.replace(/[a-z\s\.]/gi, '') / 100;
-    // console.log(realCardPrice, "realPrice");
-    
 
     let cardInfo = {
         name: adoptName,
@@ -53,10 +49,7 @@ let addCard = (button) => {
 
     adoptCards.forEach(cardObject => {
     if (cardInfo.name == cardObject.name){
-        console.log("name is same");
         cardDuplicate = true;
-        console.log(cardObject.amount);
-        console.log(cardInfo.amount);
         cardObject.amount = cardInfo.amount;     
 
         
@@ -74,20 +67,7 @@ let addCard = (button) => {
         saveCards();
     };
 
-
-
     showInCart(adoptCards)
-
-        // WIP wanna change price to no. only (?)
-        
-        // function removePriceLetters(cardPrice){
-        //     return cardPrice.replace(/[])
-        // }
-
-
-
-    console.log("buttonclicked");
-
 };
 
 
@@ -95,29 +75,28 @@ let showInCart = (adoptCards) => {
     loadCards();
     // make Clean slate to populate
     cardContainer.innerHTML = "";
+
+    let cartTotal = 0;
     
+    // Add all cards
     adoptCards.forEach(cardObject => {
         createAdoptCard(cardObject);
+        cartTotal += cardObject.priceValue * cardObject.amount;
         
     });
+
+    // Set new Cart total
+    cartTotalText.innerHTML = `Total: R ${cartTotal}.00`
+
 };
 
 
 // Create adopt cards in cart with js 
 // programmatically making HTML hierarchies
 let createAdoptCard = (cardObject) => {
-    console.log("cardobject", cardObject);
 
     let cartCard = document.createElement("div");
     cartCard.classList.add("cartCard");
-
-
-    // For If later change to alternating card styles
-    // cartCard.classList.add(cardObject.style.classList)
-
-
-    // QUESTION
-    // Totaltotal calc
 
     let cardImageContainer = document.createElement("div");
     cardImageContainer.classList.add("cardImageContainer");
@@ -166,10 +145,8 @@ let createAdoptCard = (cardObject) => {
     }
 
     let cardTotalPrice = document.createElement("h3");
+    // cardPriceCalc(cardObject, cardTotalPrice);
     cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
-    console.log(cardObject.priceValue * cardObject.amount, cardObject.priceValue, cardObject.amount);
-    // Add Price Calc here to Sub in instead
-    // QUESTION
 
     let cancelCard = document.createElement("button");
     cancelCard.classList.add("cancelCardButton");
@@ -205,7 +182,6 @@ let createAdoptCard = (cardObject) => {
 const removeCard = (removeButton) => {
     let cardToRemove = removeButton.closest('.cartCard');
     let cardToRemoveName = cardToRemove.querySelector('h2').textContent;
-    console.log(cardToRemoveName);
     adoptCards = adoptCards.filter((card) => {
         return card.name !== cardToRemoveName;
     });
@@ -225,6 +201,10 @@ function clearCart(){
 
 
 } 
+
+// function cardPriceCalc(cardObject) {
+//     cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
+// };
 
 // STILL DO / Figure out
 
@@ -357,7 +337,21 @@ const changeNumber = (type, button) =>
     };
 
     inputField.value = num;
-    
+
+     let parentCard = parentCounter.closest('.adopteeSection, .altAdopteeSection, .cartCard');
+
+    let adoptName = parentCard.querySelector('h2').textContent;
+
+    adoptCards.forEach(cardObject => {
+        if (adoptName == cardObject.name){
+            cardDuplicate = true;
+            cardObject.amount = num;     
+
+        }});  
+
+    saveCards();
+    showInCart(adoptCards);
+    // cardTotalPrice.textContent = `Total: R ${cardObject.priceValue * cardObject.amount}.00`;
 }
 
 
